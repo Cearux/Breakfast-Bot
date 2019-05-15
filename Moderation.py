@@ -8,7 +8,15 @@ class Moderation:
 		self.bot = bot
 
 	@commands.command()
-	async def :
+	async def purge(ctx, number):
+		"""Mass deletes messages."""
+		
+		messages = []
+		number = int(number)
+		async for x in Client.logs_from(ctx.message.channel, limit = number):
+			messages.append(x)
+		
+		await Client.delete_messages(messages)
 
 
 def setup(bot):
