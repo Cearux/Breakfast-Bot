@@ -1,5 +1,4 @@
 import discord
-import discord.abc
 from discord.ext import commands
 from redbot.core import commands
 import asyncio
@@ -19,7 +18,7 @@ class Moderation(Cog):
 		number = int()
 		client = discord.Client()
 		
-		async for x in ctx.message.channel(limit = number):
+		async for x in ctx.client.message.channel(limit = number):
 			messages.append(x)
 		
 		await client.delete_messages(messages)
