@@ -4,7 +4,7 @@ from redbot.core import commands
 import asyncio
 import json
 
-Cog: Any = getattr(commands, "Cog", object)
+Cog = getattr(commands, "Cog", object)
 
 class Moderation(Cog):
 	def __init__(self, bot):
