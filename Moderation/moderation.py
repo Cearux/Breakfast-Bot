@@ -28,7 +28,7 @@ class Moderation(Cog):
 	async def punish(self, ctx, user: discord.Member):
 		"""Assigns 'muted' role to user."""
 		
-		role = discord.Role(name="Muted")
+		role = discord.Role(role: "Muted")
 		await self.bot.add_roles(user, role)
 		await self.bot.say("User muted.")
 		
