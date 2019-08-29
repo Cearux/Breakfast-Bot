@@ -4,7 +4,7 @@ from redbot.core import commands
 import asyncio
 import json
 
-class Moderation:
+class Moderation(Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
@@ -20,6 +20,5 @@ class Moderation:
 		await Client.delete_messages(messages)
 
 
-def setup(bot):
-	bot.add_cog(Moderation(bot))
+
 
