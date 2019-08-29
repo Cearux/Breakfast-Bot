@@ -15,8 +15,8 @@ class Moderation(Cog):
 		"""Mass deletes messages."""
 		
 		messages = []
-		number = int(number)
-		async for x in Client.logs_from(message.channel, limit = number):
+		number = int()
+		async for x in Client.logs_from(ctx.message.channel, limit = number):
 			messages.append(x)
 		
 		await Client.delete_messages(messages)
