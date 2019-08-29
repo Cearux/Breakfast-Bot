@@ -33,7 +33,7 @@ class Moderation(Cog):
 		await self.bot.say("User muted.")
 		
 	@commands.command(pass_context=True)
-	async def punish(self, ctx, user: discord.Member):
+	async def unpunish(self, ctx, user: discord.Member):
 		"""Removes 'muted' role."""
 		
 		role = discord.Role(name="Muted")
