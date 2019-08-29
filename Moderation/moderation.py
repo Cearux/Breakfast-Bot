@@ -11,17 +11,18 @@ class Moderation(Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
-	@commands.command()
+	@commands.command(pass_context=True)
 	async def purge(ctx, number):
 		"""Mass deletes messages."""
 		
 		messages = []
 		number = int()
+		client = discord.Client()
 		
-		async for x in Client.logs_from(ctx.message.channel, limit = number):
+		async for x in client.logs_from(ctx.message.channel, limit = number):
 			messages.append(x)
 		
-		await Client.delete_messages(messages)
+		await client.delete_messages(messages)
 
 
 
