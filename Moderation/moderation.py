@@ -25,10 +25,17 @@ class Moderation(Cog):
 
 
 	@commands.command(pass_context=True)
-	async def mute(self, ctx, user: discord.Member, number)
+	async def mute(self, ctx, user: discord.Member):
 		"""Assigns 'muted' role to user."""
 		
 		role = discord.Role(name="Muted")
 		await self.bot.add_roles(user, role)
 		await self.bot.say("User muted.")
 		
+	@commands.command(pass_context=True)
+	async def unmute(self, ctx, user: discord.Member):
+		"""Removes 'muted' role."""
+		
+		role = discord.Role(name="Muted")
+		await self.bot.remove_roles(user, role)
+		await self.bot.say("User unmuted.")
