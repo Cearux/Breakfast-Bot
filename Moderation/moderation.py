@@ -17,8 +17,8 @@ class Moderation(Cog):
 		
 		messages = []
 		number = int()
-		channel = ctx.message.channel
-		async for x in channel.logs_from(ctx.message.channel, limit = number):
+		
+		async for x in Client.logs_from(ctx.message.channel, limit = number):
 			messages.append(x)
 		
 		await Client.delete_messages(messages)
