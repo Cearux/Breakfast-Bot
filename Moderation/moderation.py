@@ -18,11 +18,17 @@ class Moderation(Cog):
 		number = int()
 		client = discord.Client()
 		
-		async for x in ctx.client.message.channel(limit = number):
+		async for x in ctx.message.channel(limit = number):
 			messages.append(x)
 		
 		await client.delete_messages(messages)
 
 
-
-
+	@commands.command(pass_context=True)
+	async def mute(self, ctx, user: discord.Member, number)
+		"""Assigns 'muted' role to user."""
+		
+		role = discord.Role(name="Muted")
+		await self.bot.add_roles(user, role)
+		await self.bot.say("User muted.")
+		
